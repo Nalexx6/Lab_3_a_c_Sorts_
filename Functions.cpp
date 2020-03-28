@@ -60,8 +60,8 @@ void Functions::multiple_sort_demo(void (*sort_ptr[])(Point*, int, int, bool), i
     /*
      *
      */
-    int N = 10;
-    Point* array = create_almost_sorted(N);
+    int N = 30;
+    Point* array = create_N_rand(N);
     if(key == 3){
         Diff_sorts::set_limit(N / 4 + 1);
     }
@@ -83,7 +83,7 @@ void Functions::comparison_benchmark(Point* array, int al_sorted, std::ofstream&
         std::cout<<"Proccesing all sorts for array size "<<N<<"...."<<std::endl;
 //        Point* array = create_N_rand(N);
         Point* copy = new Point[N];
-        //std::cout<<"Processing insertion sort...\n";
+        std::cout<<"Processing insertion sort...\n";
         if(N <= 100000 || al_sorted == 1) {
             for (int j = 0; j < N; j++) {
                 copy[j] = array[j];
@@ -92,42 +92,42 @@ void Functions::comparison_benchmark(Point* array, int al_sorted, std::ofstream&
             Diff_sorts::insertion_sort(copy, 0, N - 1, false);
             end = clock();
             if (!Diff_sorts::check_for_sorted(copy, 0, N - 1))
-                std::cout << "Array isn`t sorted\n";
+                std::cout << "Array isn`t sorted insertion\n";
             values[0][i] = end - start;
         }
 
         for(int j = 0; j < N; j++) {
             copy[j] = array[j];
         }
-        //std::cout<<"Processing quick sort...\n";
+        std::cout<<"Processing quick sort...\n";
         start = clock();
         Diff_sorts::quick_sort(copy, 0, N - 1, false);
         end = clock();
         if(! Diff_sorts::check_for_sorted(copy, 0, N - 1))
-            std::cout<<"Array isn`t sorted\n";
+            std::cout<<"Array isn`t sorted quick\n";
         values[1][i] = end - start;
 
         for(int j = 0; j < N; j++) {
             copy[j] = array[j];
         }
-        //std::cout<<"Processing merge sort...\n";
+        std::cout<<"Processing merge sort...\n";
         start = clock();
         Diff_sorts::merge_sort(copy, 0, N - 1, false);
         end = clock();
         if(! Diff_sorts::check_for_sorted(copy, 0, N - 1))
-            std::cout<<"Array isn`t sorted\n";
+            std::cout<<"Array isn`t sorted \n";
         values[2][i] = end - start;
 
 
         for(int j = 0; j < N; j++) {
             copy[j] = array[j];
         }
-        //std::cout<<"Processing std quick sort...\n";
+        std::cout<<"Processing std quick sort...\n";
         start = clock();
-        Diff_sorts::std_quick_sort(copy);
+        Diff_sorts::std_quick_sort(copy, 0, N - 1);
         end = clock();
         if(! Diff_sorts::check_for_sorted(copy, 0, N - 1))
-            std::cout<<"Array isn`t sorted\n";
+//            std::cout<<"Array isn`t sorted std\n";
         values[3][i] = end - start;
         int k = 4;
         for(int l = 5; l <= 80; l *= 2) {
@@ -135,7 +135,7 @@ void Functions::comparison_benchmark(Point* array, int al_sorted, std::ofstream&
             for(int j = 0; j < N; j++) {
                 copy[j] = array[j];
             }
-            //std::cout<<"Processing smart merge sort for limit "<<l<<"\n";
+            std::cout<<"Processing smart merge sort for limit "<<l<<"\n";
             start = clock();
             Diff_sorts::smart_merge_sort(copy, 0, N - 1, false);
             end = clock();
@@ -150,7 +150,7 @@ void Functions::comparison_benchmark(Point* array, int al_sorted, std::ofstream&
             for(int j = 0; j < N; j++) {
                 copy[j] = array[j];
             }
-            //std::cout<<"Processing smart merge sort for limit "<<l<<"\n";
+            std::cout<<"Processing shell sort for rule "<<rule<<"\n";
             start = clock();
             Diff_sorts::shell_sort(copy, 0, N - 1, false);
             end = clock();
@@ -161,16 +161,18 @@ void Functions::comparison_benchmark(Point* array, int al_sorted, std::ofstream&
             //std::cout<<"fdsff\n";
         }
         if(N <= 1000000) {
-            for (int j = 0; j < N; j++) {
-                copy[j] = array[j];
+            if( N != 1000000 || al_sorted == 0) {
+                for (int j = 0; j < N; j++) {
+                    copy[j] = array[j];
+                }
+                std::cout<<"Processing binary tree sort...\n";
+                start = clock();
+                Diff_sorts::bt_sort(copy, 0, N - 1, false);
+                end = clock();
+                if (!Diff_sorts::check_for_sorted(copy, 0, N - 1))
+                    std::cout << "Array isn`t sorted\n";
+                values[12][i] = end - start;
             }
-            //std::cout<<"Processing merge sort...\n";
-            start = clock();
-            Diff_sorts::bt_sort(copy, 0, N - 1, false);
-            end = clock();
-            if (!Diff_sorts::check_for_sorted(copy, 0, N - 1))
-                std::cout << "Array isn`t sorted\n";
-            values[12][i] = end - start;
         }
 
         i++;
@@ -226,7 +228,7 @@ void Functions::comparison_benchmark(Point* array, int al_sorted, std::ofstream&
     if(al_sorted == 0)
         f <<"\t> 5 minutes";
     else
-        f <<"\t> 3 hours";
+        f <<"\t~ 1 minute\t> 3 hours";
 
 
 

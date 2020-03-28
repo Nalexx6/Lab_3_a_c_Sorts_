@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <vector>
+#include <cstdlib>
 
 class Diff_sorts {
 
@@ -68,7 +69,7 @@ public:
 
     //Std:: quick sort
 
-    static void std_quick_sort(Point* array);
+    static void std_quick_sort(Point* array, int lo, int hi);
 
     //Shell sort
 

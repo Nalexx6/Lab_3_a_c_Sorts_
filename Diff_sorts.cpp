@@ -55,8 +55,8 @@ void Diff_sorts::insertion_sort(Point *array, int lo, int hi, bool printing) {
 
 void Diff_sorts::shuffle(Point *array, int lo, int hi, bool printing) {
 
-    for(int i = 0; i < hi - lo + 1; i++){
-        std::swap(array[i], array[lo + rand() % i]);
+    for(int i = 1; i < hi - lo + 1; i++){
+        std::swap(array[lo + i], array[lo + rand() % i]);
     }
 
 }
@@ -208,10 +208,10 @@ void Diff_sorts::smart_merge_sort(Point *array, int lo, int hi, bool printing) {
 
 }
 
-void Diff_sorts::std_quick_sort(Point *array) {
+void Diff_sorts::std_quick_sort(Point *array, int lo, int hi) {
 
     int (*comp)(Point, Point) = compare;
-    std::qsort(array, sizeof(array), sizeof(array[0]), reinterpret_cast<int (*)(const void *, const void *)>(comp));
+    std::qsort(array, hi - lo + 1, sizeof(array[0]), reinterpret_cast<int (*)(const void *, const void *)>(comp));
 
 }
 
@@ -309,6 +309,7 @@ void Diff_sorts::shell_sort(Point *array, int lo, int hi, bool printing) {
 
 void Diff_sorts::bt_sort(Point *array, int lo, int hi, bool printing) {
 
+    shuffle(array, lo, hi, printing);
     Bin_search_tree* tree = new Bin_search_tree();
     if(printing){
         std::cout<<"Firstly we will build our tree\n";
@@ -321,6 +322,9 @@ void Diff_sorts::bt_sort(Point *array, int lo, int hi, bool printing) {
     }
     int index = lo;
     tree->go_round(array, index, tree->root, printing);
+    if(printing) {
+        print_all_from_array(array, lo, hi);
+    }
     tree->destroy(tree->root);
     delete tree;
 
