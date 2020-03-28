@@ -20,6 +20,7 @@ void Mode::demo() {
         std::cin>>key;
         void (*sort_ptr[])(Point*, int, int, bool) = {Diff_sorts::insertion_sort, Diff_sorts::quick_sort, Diff_sorts::merge_sort,
                             Diff_sorts::smart_merge_sort, Diff_sorts::shell_sort, Diff_sorts::bt_sort};
+
         Functions::multiple_sort_demo(sort_ptr, key);
         std::cout<<"If you want to execute another mode press 'y', press 'n', if you don`t\n";
         std::cin>>response;

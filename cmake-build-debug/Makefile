@@ -122,6 +122,33 @@ Lab_3_a_c_Sorts_/fast:
 	$(MAKE) -f CMakeFiles\Lab_3_a_c_Sorts_.dir\build.make CMakeFiles/Lab_3_a_c_Sorts_.dir/build
 .PHONY : Lab_3_a_c_Sorts_/fast
 
+Bin_search_tree.obj: Bin_search_tree.cpp.obj
+
+.PHONY : Bin_search_tree.obj
+
+# target to build an object file
+Bin_search_tree.cpp.obj:
+	$(MAKE) -f CMakeFiles\Lab_3_a_c_Sorts_.dir\build.make CMakeFiles/Lab_3_a_c_Sorts_.dir/Bin_search_tree.cpp.obj
+.PHONY : Bin_search_tree.cpp.obj
+
+Bin_search_tree.i: Bin_search_tree.cpp.i
+
+.PHONY : Bin_search_tree.i
+
+# target to preprocess a source file
+Bin_search_tree.cpp.i:
+	$(MAKE) -f CMakeFiles\Lab_3_a_c_Sorts_.dir\build.make CMakeFiles/Lab_3_a_c_Sorts_.dir/Bin_search_tree.cpp.i
+.PHONY : Bin_search_tree.cpp.i
+
+Bin_search_tree.s: Bin_search_tree.cpp.s
+
+.PHONY : Bin_search_tree.s
+
+# target to generate assembly for a file
+Bin_search_tree.cpp.s:
+	$(MAKE) -f CMakeFiles\Lab_3_a_c_Sorts_.dir\build.make CMakeFiles/Lab_3_a_c_Sorts_.dir/Bin_search_tree.cpp.s
+.PHONY : Bin_search_tree.cpp.s
+
 Diff_sorts.obj: Diff_sorts.cpp.obj
 
 .PHONY : Diff_sorts.obj
@@ -266,6 +293,9 @@ help:
 	@echo ... Lab_3_a_c_Sorts_
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Bin_search_tree.obj
+	@echo ... Bin_search_tree.i
+	@echo ... Bin_search_tree.s
 	@echo ... Diff_sorts.obj
 	@echo ... Diff_sorts.i
 	@echo ... Diff_sorts.s

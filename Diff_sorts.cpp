@@ -306,3 +306,23 @@ void Diff_sorts::shell_sort(Point *array, int lo, int hi, bool printing) {
     }
 
 }
+
+void Diff_sorts::bt_sort(Point *array, int lo, int hi, bool printing) {
+
+    Bin_search_tree* tree = new Bin_search_tree();
+    if(printing){
+        std::cout<<"Firstly we will build our tree\n";
+    }
+    for(int i = lo; i < hi + 1; i++){
+        tree->insert(array[i]);
+    }
+    if(printing){
+        std::cout<<"Now our tree is builded, so we will go-round it, and rewrite our array\n";
+    }
+    int index = lo;
+    tree->go_round(array, index, tree->root, printing);
+    tree->destroy(tree->root);
+    delete tree;
+
+
+}

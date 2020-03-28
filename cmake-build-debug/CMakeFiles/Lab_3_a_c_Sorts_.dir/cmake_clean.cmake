@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Lab_3_a_c_Sorts_.dir/Bin_search_tree.cpp.obj"
   "CMakeFiles/Lab_3_a_c_Sorts_.dir/Diff_sorts.cpp.obj"
   "CMakeFiles/Lab_3_a_c_Sorts_.dir/Functions.cpp.obj"
   "CMakeFiles/Lab_3_a_c_Sorts_.dir/Mode.cpp.obj"

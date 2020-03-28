@@ -5,7 +5,8 @@
 #ifndef LAB_3_A_C_SORTS__DIFF_SORTS_H
 #define LAB_3_A_C_SORTS__DIFF_SORTS_H
 
-#include "Point.h"
+#include "Bin_search_tree.h"
+
 
 #include <iostream>
 #include <vector>

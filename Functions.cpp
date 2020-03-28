@@ -55,7 +55,7 @@ Point* Functions::create_almost_unsorted(int &N) {
     return array;
 }
 
-void Functions::multiple_sort_demo(void (*sort_ptr[])(Point*, int, int, bool),int key) {
+void Functions::multiple_sort_demo(void (*sort_ptr[])(Point*, int, int, bool), int key) {
 
     /*
      *
