@@ -226,3 +226,83 @@ bool Diff_sorts::check_for_sorted(Point *array, int lo, int hi) {
     }
     return true;
 }
+
+void Diff_sorts::set_rule(int a) {
+
+    rule = a;
+
+}
+
+int Diff_sorts::my_pow(int base, int power) {
+
+    int res = 1;
+    for(int i = 0; i < power; i++){
+        res *= base;
+    }
+    return res;
+
+}
+
+void Diff_sorts::set_gaps() {
+
+    int i = 1;
+    gaps.clear();
+    if(rule == 0){
+
+        while(i <= 10000000 / 3){
+            gaps.emplace(gaps.begin(), i);
+            i = 3 * i + 1;
+        }
+        return;
+
+    }
+    int k = 1;
+    if(rule == 1){
+
+        while(i <= 10000000){
+            gaps.emplace(gaps.begin(), i);
+            i = my_pow(4, k) + 3 * my_pow(2, k - 1)  + 1;
+            k++;
+        }
+        return;
+
+    }
+    if(rule == 2){
+
+        while(i <= 10000000){
+            gaps.emplace(gaps.begin(), i);
+            if(k % 2){
+                i = 8 * my_pow(2, k) - 6 * my_pow(2, (k + 1) / 2) + 1;
+            } else{
+                i = 9 * (my_pow(2, k) - my_pow(2, k /2)) + 1;
+            }
+            k++;
+        }
+
+    }
+
+
+}
+
+void Diff_sorts::shell_sort(Point *array, int lo, int hi, bool printing) {
+
+    set_gaps();
+    for(auto gap: gaps) {
+        if(gap < hi - lo + 1) {
+            Point temp;
+            for (int i = lo + gap; i < hi + 1; i++) {
+                temp = array[i];
+                std::size_t j;
+                for (j = i; j >= gap && compare(array[j - gap], temp) > 0; j -= gap) {
+                    array[j] = array[j - gap];
+                }
+                array[j] = temp;
+            }
+            if (printing) {
+                std::cout << "It`s our array after sorting our array by gap = " << gap << "\n";
+                print_all_from_array(array, lo, hi);
+            }
+        }
+    }
+
+}

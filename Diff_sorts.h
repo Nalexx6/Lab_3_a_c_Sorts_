@@ -40,6 +40,7 @@ private:
     static int rule;
     static std::vector <int> gaps;
     static void set_gaps();
+    static int my_pow(int base, int power);
 
 public:
     //Auxiliary
