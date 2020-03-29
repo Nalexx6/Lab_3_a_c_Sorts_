@@ -32,10 +32,10 @@ void Mode::benchmark() {
 
     int N = 10000000;
     std::string breakpoint;
-    std::ofstream f_c("../Files/Benchmark data (3a_c).txt", std::ios::trunc);
+    std::ofstream f_c("../Files/Benchmark data(3a_c).txt", std::ios::trunc);
     f_c.close();
 
-    std::ofstream f("../Files/Benchmark data (3a_c).txt", std::ios::trunc);
+    std::ofstream f("../Files/Benchmark data(3a_c).txt", std::ios::trunc);
     std::cout<<"There will be 3 different benchmarks for all sorts\n"
                "1 - randomly sorted array\n"
                "2 - almost sorted array\n"
@@ -44,18 +44,22 @@ void Mode::benchmark() {
                "cin anything to continue\n";
     std::cin>>breakpoint;
     Point* array = Functions::create_N_rand(N);
+    f << "Data for random sorted array\n";
     Functions::comparison_benchmark(array, 0, f);
 
     std::cout<<"Now we will execute benchmark for almost sorted array,\n"
                "cin anything to continue\n";
     std::cin>>breakpoint;
     array = Functions::create_almost_sorted(N);
+    f << "\n\nData for almost sorted array\n";
     Functions::comparison_benchmark(array, 1, f);
 
     std::cout<<"Firstly we will execute benchmark for almost sorted array, but in reverse order,\n"
                "cin anything to continue\n";
     std::cin>>breakpoint;
     array = Functions::create_almost_unsorted(N);
+    f << "\n\nData for almost sorted array, but in reverse order\n";
+
     Functions::comparison_benchmark(array, 2, f);
 
     f.close();

@@ -210,8 +210,28 @@ void Diff_sorts::smart_merge_sort(Point *array, int lo, int hi, bool printing) {
 
 void Diff_sorts::std_quick_sort(Point *array, int lo, int hi) {
 
-    int (*comp)(Point, Point) = compare;
-    std::qsort(array, hi - lo + 1, sizeof(array[0]), reinterpret_cast<int (*)(const void *, const void *)>(comp));
+
+    std::qsort(array, hi - lo + 1, sizeof(array[0]), [](const void *a, const void *b){
+
+        Point arg1 = *static_cast<const Point*>(a);
+        Point arg2 = *static_cast<const Point*>(b);
+
+        if(arg1.x_cor > arg2.x_cor)
+            return 1;
+        if(arg1.x_cor < arg2.x_cor)
+            return -1;
+        if(arg1.y_cor > arg2.y_cor)
+            return 1;
+        if(arg1.y_cor < arg2.y_cor)
+            return -1;
+        if(arg1.z_cor > arg2.z_cor)
+            return 1;
+        if(arg1.z_cor < arg2.z_cor)
+            return -1;
+        return 0;
+
+    });
+
 
 }
 
