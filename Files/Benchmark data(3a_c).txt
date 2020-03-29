@@ -1,47 +1,47 @@
 Data for random sorted array
 Number of elements				10^2	10^3	10^4	10^5	10^6	10^7
-Insertion sort					0		6		457		46515	> 3 hours	> 5 days
-Quick sort						1		0		5		60		795		8608
-Merge sort						0		0		4		50		621		7460
-Std::quick sort					0		1		4		48		595		7016
-Smart merge sort(limit 5)		0		0		3		49		603		7239
-Smart merge sort(limit 10)		0		0		3		49		614		7223
-Smart merge sort(limit 20)		0		1		3		49		618		7394
-Smart merge sort(limit 40)		0		0		4		51		671		8013
-Smart merge sort(limit 80)		0		0		6		60		783		9475
-Shell sort(rule 0)				0		1		6		99		1466		22736
-Shell sort(rule 1)				0		0		5		76		960		12126
-Shell sort(rule 2)				0		1		5		69		891		11170
-Binary tree sort				0		0		11		149		181780	> 5 minutes
+Insertion sort					0		4		458		47604	> 3 hours	> 5 days
+Quick sort						0		0		5		65		782		8637
+Merge sort						0		0		4		55		627		7590
+Std::quick sort					0		0		4		67		598		7116
+Smart merge sort(limit 5)		0		1		4		60		604		7279
+Smart merge sort(limit 10)		0		0		4		61		601		7245
+Smart merge sort(limit 20)		0		0		4		63		615		7457
+Smart merge sort(limit 40)		0		1		4		67		653		8099
+Smart merge sort(limit 80)		0		0		5		82		776		9564
+Shell sort(rule 0)				0		0		5		118		1462		22887
+Shell sort(rule 1)				0		0		6		85		963		12262
+Shell sort(rule 2)				0		0		5		89		896		11317
+Binary tree sort				0		1		11		160		2298	> 5 minutes
 
 Data for almost sorted array
 Number of elements				10^2	10^3	10^4	10^5	10^6	10^7
-Insertion sort					0		0		1		3		25		217
-Quick sort						0		0		6		67		788		18970
-Merge sort						0		0		3		40		440		4240
-Std::quick sort					0		0		3		27		351		3441
-Smart merge sort(limit 5)		0		1		2		35		405		3943
-Smart merge sort(limit 10)		0		0		2		35		349		3819
-Smart merge sort(limit 20)		0		0		3		33		383		3649
-Smart merge sort(limit 40)		0		0		2		32		384		3511
-Smart merge sort(limit 80)		0		0		2		25		324		3320
-Shell sort(rule 0)				0		0		2		25		286		2906
-Shell sort(rule 1)				0		0		2		21		237		2443
-Shell sort(rule 2)				0		1		3		33		354		4107
-Binary tree sort				0		1		15		204	~ 1 minute	> 3 hours
+Insertion sort					0		0		0		2		21		214
+Quick sort						0		1		5		56		732		18878
+Merge sort						1		0		2		32		354		4274
+Std::quick sort					0		0		2		23		304		3437
+Smart merge sort(limit 5)		0		0		2		34		333		4225
+Smart merge sort(limit 10)		0		1		1		28		321		3823
+Smart merge sort(limit 20)		0		0		1		24		306		3662
+Smart merge sort(limit 40)		0		0		2		23		291		3495
+Smart merge sort(limit 80)		0		0		1		21		272		3356
+Shell sort(rule 0)				0		0		1		20		248		2906
+Shell sort(rule 1)				0		0		2		17		211		2452
+Shell sort(rule 2)				0		0		2		26		333		4171
+Binary tree sort				0		1		13		145	~ 1 minute	> 3 hours
 
 Data for almost sorted array, but in reverse order
 Number of elements				10^2	10^3	10^4	10^5	10^6	10^7
-Insertion sort					0		10		950		93179		0		0
-Quick sort						0		1		4		58		804		25983
-Merge sort						0		0		2		27		345		4122
-Std::quick sort					0		0		2		25		316		3495
-Smart merge sort(limit 5)		0		0		2		28		340		4093
-Smart merge sort(limit 10)		0		1		2		29		352		4361
-Smart merge sort(limit 20)		0		0		4		33		413		5071
-Smart merge sort(limit 40)		0		1		5		48		537		6674
-Smart merge sort(limit 80)		0		0		8		63		809		10038
-Shell sort(rule 0)				0		1		2		31		368		4537
-Shell sort(rule 1)				0		0		3		30		378		4276
-Shell sort(rule 2)				0		0		3		35		451		5243
-Binary tree sort				0		1		12		146	~ 1 minute	> 3 hours
+Insertion sort					0		9		917		93166		0		0
+Quick sort						0		0		6		58		796		26106
+Merge sort						0		1		3		28		342		4151
+Std::quick sort					0		0		2		24		304		3488
+Smart merge sort(limit 5)		0		0		3		29		346		4182
+Smart merge sort(limit 10)		0		0		3		31		355		4378
+Smart merge sort(limit 20)		0		0		4		34		415		5074
+Smart merge sort(limit 40)		0		1		5		44		541		6644
+Smart merge sort(limit 80)		0		0		8		64		805		10027
+Shell sort(rule 0)				0		1		2		31		357		4506
+Shell sort(rule 1)				0		0		2		32		378		4236
+Shell sort(rule 2)				0		0		2		37		438		5341
+Binary tree sort				0		1		10		147	~ 1 minute	> 3 hours

@@ -226,7 +226,7 @@ void Functions::comparison_benchmark(Point* array, int al_sorted, std::ofstream&
         f <<"\t\t"<< values[12][i];
     }
     if(al_sorted == 0)
-        f <<"\t\t"<<values[12][i]<<"\t> 5 minutes";
+        f <<"\t\t"<<values[12][4]<<"\t> 5 minutes";
     else
         f <<"\t~ 1 minute\t> 3 hours";
 

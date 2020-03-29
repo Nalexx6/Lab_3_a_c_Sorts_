@@ -61,7 +61,7 @@ void Mode::benchmark() {
     f << "\n\nData for almost sorted array, but in reverse order\n";
 
     Functions::comparison_benchmark(array, 2, f);
-
+    std::cout<<"Results of benchmark are accessible in file: Benchmark data(3a_c).txt\n";
     f.close();
 
 
