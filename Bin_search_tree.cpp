@@ -60,8 +60,10 @@ void Bin_search_tree::go_round(Point *array, int& index, Bin_search_tree::Node *
     go_round(array, index,  node->left, printing);
     if(printing)
         std::cout<<"Now we will write element: "<<node->value.x_cor<<" to our array\n";
-    array[index] = node->value;
-    index++;
+    for(int i = 0; i < node->count; i++) {
+        array[index] = node->value;
+        index++;
+    }
     if(printing)
         std::cout<<"Now we will go right from element: "<<node->value.x_cor<<"\n";
     go_round(array, index, node->right, printing);
