@@ -44,7 +44,7 @@ Bin_search_tree::Node *Bin_search_tree::insert(Bin_search_tree::Node *node, Poin
     if(compare(value, node->value) > 0){
         node->right = insert(node->right, value);
     }
-    if(compare(value, node->value) < 0){
+    if(compare(value, node->value) == 0){
         node->count++;
     }
     return node;
